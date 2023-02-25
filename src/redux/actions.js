@@ -1,6 +1,7 @@
 export const ADD_CANDY = "ADD_CANDY"
 export const TOGGLE_CANDY = "TOGGLE_CANDY"
 export const REMOVE_CANDY = "REMOVE_CANDY"
+export const SHOW_CANDY = "SHOW_CANDY"
 
 /*
  * { type: ADD_TODO, text: "New todo text" }
@@ -29,3 +30,9 @@ export function removeCandy(id) {
     return { type: REMOVE_CANDY, id }
 }
 
+/*
+ * { type: REMOVE_TODO, id: 3 }
+ */
+export function showCandy() {
+    return { type: SHOW_CANDY }
+}

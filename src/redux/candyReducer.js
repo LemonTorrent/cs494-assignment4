@@ -1,4 +1,4 @@
-import { ADD_CANDY, TOGGLE_CANDY, REMOVE_CANDY } from './actions'
+import { ADD_CANDY, TOGGLE_CANDY, REMOVE_CANDY, SHOW_CANDY } from './actions'
 
 let candyId = 0
 let found = false;
@@ -33,6 +33,8 @@ function candyReducer(state = [], action) {
             return state.map(todo => (
                 todo.id === action.id ? null : todo
             ))
+        case SHOW_CANDY:
+            return state
         default:
             console.log("return default")
             return state
