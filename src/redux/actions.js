@@ -7,7 +7,7 @@ export const REMOVE_CANDY = "REMOVE_CANDY"
  */
 export function addCandy(text, num = 0) {
     // if (num >= 1) {
-    //     return { type: ADD_CANDY, text }
+    //     return { type: ADD_CANDY, text, num }
         
     // }
 

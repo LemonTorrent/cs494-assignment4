@@ -28,7 +28,7 @@ function Candy({ name, inStock, id, photoUrl, price }) {
                     max="100"
                     step="10"
                     onChange={evt => {
-                        setNumCandy(evt.target.value)
+                        setNumCandy(parseInt(evt.target.value))
                     }}
                     required 
                     />
@@ -36,14 +36,9 @@ function Candy({ name, inStock, id, photoUrl, price }) {
                 <div>
                     <input type="submit" onClick={() => {
                         dispatch(addCandy(name, numCandy))
-                        inStock = inStock - numCandy
                         }} value="Add to Cart"/>
                 </div>
             </div>
-            {/* <button onClick={() => {
-                dispatch(addCandy(name))
-                inStock = inStock - numCandy
-                }}>Add to Cart</button> */}
             {name}
             Stock: {inStock}
             {/* <img src={photoUrl} alt={photoUrl} /> */}
