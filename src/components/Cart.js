@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {getCandies} from '../redux/selectors'
+import {removeCandy} from '../redux/actions'
 
 
 function Cart({ candies }) {
     const dispatch = useDispatch()
     const [show, setShow] = useState(false);
     const cartContents = useSelector(getCandies)
+
+    function removeFromCart(id) {
+        console.log("Remove from cart at id ", id)
+        dispatch(removeCandy(id));
+    }
 
     return (
         <div>
@@ -16,8 +22,15 @@ function Cart({ candies }) {
                         (
                             <div>
                                 {/* {candies ? candies.map(candy => <p>{candy.name}</p>) : <p>Nothing in Cart</p>} */}
+                                {console.log("Before mapping", cartContents.length)}
                                 {cartContents.length > 0 ? cartContents.map(candy => {
-                                        <p>{candy.text}, {candy.quantity}, ${candy.quantity * candy.price}</p>
+                                        return(<div>
+                                            <p>{candy.text}, {candy.quantity}, ${candy.quantity * candy.price}</p>
+                                            <button onClick={()=>{
+                                                removeFromCart(candy.id)
+                                                }}>Remove from Cart</button>
+                                        </div>
+                                        )
                                     }) : <p>Nothing in Cart</p>}
                                 <button>Check Out</button>
                             </div>

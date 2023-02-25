@@ -31,9 +31,11 @@ function candyReducer(state = [], action) {
             return [...state];
 
         case REMOVE_CANDY:
-            return state.map(todo => (
-                todo.id === action.id ? null : todo
-            ))
+            tempArr = state.filter(function (candy) {
+                return candy.id != action.id
+            })
+
+            return [...tempArr]
         case SHOW_CANDY:
             return state
         default:
