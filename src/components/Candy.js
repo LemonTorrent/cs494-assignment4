@@ -35,7 +35,9 @@ function Candy({ name, inStock, id, photoUrl, price }) {
                 
                 <div>
                     <input type="submit" onClick={() => {
-                        dispatch(addCandy(name, numCandy))
+                        if (numCandy > 0) {
+                            dispatch(addCandy(name, numCandy))
+                        }
                         }} value="Add to Cart"/>
                 </div>
             </div>

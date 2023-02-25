@@ -5,12 +5,12 @@ let found = false;
 let tempArr = [];
 
 function candyReducer(state = [], action) {
-    console.log("Reducer state:", state)
-    console.log("Reducer action:", action)
+    // console.log("Reducer state:", state)
+    // console.log("Reducer action:", action)
     switch (action.type) {
         case ADD_CANDY:
             found = false;
-            tempArr = state.map((todo) => {
+            state.map((todo) => {
                 if (todo.text === action.text){
                   todo.quantity += action.num
                   found = true;
@@ -18,29 +18,17 @@ function candyReducer(state = [], action) {
             })
 
             if (found == false) {
-                console.log("Found is false")
                 return([
                     {
                         text: action.text,
                         quantity: action.num,
                         id: ++candyId
                     },        
-                    ...tempArr]
+                    ...state]
                     )
             }
-
-            console.log("Found is true")
-
             return [...state];
 
-            // return [
-            //     {
-            //         text: action.text,
-            //         quantity: action.num,
-            //         id: ++candyId
-            //     },
-            //     ...state
-            // ]
         case REMOVE_CANDY:
             return state.map(todo => (
                 todo.id === action.id ? null : todo
