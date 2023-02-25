@@ -6,14 +6,14 @@ export const SHOW_CANDY = "SHOW_CANDY"
 /*
  * { type: ADD_TODO, text: "New todo text" }
  */
-export function addCandy(text, num = 0) {
+export function addCandy(text, num = 0, price) {
     // if (num >= 1) {
     //     return { type: ADD_CANDY, text, num }
         
     // }
 
     // return {};
-    return { type: ADD_CANDY, text, num}
+    return { type: ADD_CANDY, text, num, price}
 }
 
 /*

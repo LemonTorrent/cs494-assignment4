@@ -10,10 +10,10 @@ function candyReducer(state = [], action) {
     switch (action.type) {
         case ADD_CANDY:
             found = false;
-            state.map((todo) => {
-                if (todo.text === action.text){
-                  todo.quantity += action.num
-                  found = true;
+            state.map((candy) => {
+                if (candy.text === action.text){
+                    candy.quantity += action.num
+                    found = true;
                 }
             })
 
@@ -22,6 +22,7 @@ function candyReducer(state = [], action) {
                     {
                         text: action.text,
                         quantity: action.num,
+                        price: action.price,
                         id: ++candyId
                     },        
                     ...state]
