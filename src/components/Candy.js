@@ -1,7 +1,7 @@
 import styled from '@emotion/styled/macro'
 import { useDispatch, useSelector } from 'react-redux'
 import {getProducts} from '../redux/selectors'
-import {addCandy} from '../redux/actions'
+import {addCandy, removeProduct} from '../redux/actions'
 import { useState } from 'react'
 
 const CandyContainer = styled.div`
@@ -37,9 +37,10 @@ function Candy({ name, inStock, id, photoUrl, price }) {
                 
                 <div>
                     <input type="submit" onClick={() => {
-                        console.log("quantity: ", products[id - 1].inStock)
+                        console.log("quantity: ", products[id - 1])
                         if (numCandy > 0 && numCandy < products[id - 1].inStock) {
                             dispatch(addCandy(name, numCandy, price))
+                            dispatch(removeProduct(id, numCandy))
                         }
                         }} value="Add to Cart"/>
                 </div>

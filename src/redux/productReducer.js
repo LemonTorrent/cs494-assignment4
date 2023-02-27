@@ -21,7 +21,16 @@ function productReducer(state = [], action) {
             ]
         case REMOVE_PRODUCT:
             console.log("Removing product, action: ", action)
-            return state
+            console.log("Tentative attempt ")
+            console.log("State: ", state)
+            return (state.map((product) => {
+                if (product.id === action.id){
+                    product.inStock -= action.quantity
+                    return product
+                }
+                return product
+            }))
+            
         // case ADD_CANDY:
         //     found = false;
         //     state.map((candy) => {
