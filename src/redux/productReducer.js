@@ -1,10 +1,6 @@
 import data from '../data/products.json'
 import { ADD_PRODUCT, REMOVE_PRODUCT, RECEIVE_PRODUCT } from './actions'
 
-let productId = 0
-let found = false;
-let tempArr = [];
-
 function productReducer(state = [], action) {
     console.log("Inside productReducer")
     switch (action.type) {
