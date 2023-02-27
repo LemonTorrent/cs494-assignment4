@@ -43,12 +43,20 @@ export function showCandy() {
 /*
  * { type: ADD_PRODUCT, text: "New candy text", int: price, int:  quantity}
  */
-export function addProduct(text, quantity = 0, price) {
+export function addProduct(name, inStock = 0, photoUrl, price, id) {
     // if (num >= 1) {
     //     return { type: ADD_CANDY, text, num }
         
     // }
 
     // return {};
-    return { type: ADD_PRODUCT, text, quantity, price}
+    console.log("Add product")
+    return { type: ADD_PRODUCT, name, inStock, photoUrl, price, id}
+}
+
+/*
+ * { type: REMOVE_TODO, id: 3 }
+ */
+export function removeProduct(id, quantity) {
+    return { type: REMOVE_PRODUCT, id, quantity }
 }
