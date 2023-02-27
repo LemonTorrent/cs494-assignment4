@@ -5,7 +5,7 @@ import useProducts from './hooks/useProducts'
 import Cart from './components/Cart'
 import Spinner from './components/Spinner'
 import { useDispatch, useSelector } from 'react-redux'
-import {getProducts, getCandies} from './redux/selectors'
+import {getProducts} from './redux/selectors'
 import {addProduct} from './redux/actions'
 import {useEffect} from 'react'
 

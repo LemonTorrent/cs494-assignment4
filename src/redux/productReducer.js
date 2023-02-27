@@ -9,7 +9,6 @@ function productReducer(state = [], action) {
     console.log("Inside productReducer")
     switch (action.type) {
         case ADD_PRODUCT:
-            console.log("Add product, action: ", action)
             return [
                 {
                     name: action.name,
@@ -20,6 +19,9 @@ function productReducer(state = [], action) {
                 },
                 ...state
             ]
+        case REMOVE_PRODUCT:
+            console.log("Removing product, action: ", action)
+            return state
         // case ADD_CANDY:
         //     found = false;
         //     state.map((candy) => {

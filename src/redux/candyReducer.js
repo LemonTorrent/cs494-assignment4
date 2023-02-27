@@ -10,7 +10,7 @@ function candyReducer(state = [], action) {
             found = false;
             state.map((candy) => {
                 if (candy.text === action.text){
-                    candy.quantity += action.num
+                    candy.quantity += action.quantity
                     found = true;
                 }
             })
