@@ -28,49 +28,12 @@ function productReducer(state = [], action) {
                 return product
             }))
             case RECEIVE_PRODUCT:
-                console.log("Restocking product, action: ", action)
-                console.log("Tentative attempt ")
-                console.log("State: ", state)
                 return (state.map((product) => {
                     if (product.name === action.name){
-                        console.log("Before adding product: ", product.inStock)
                         product.inStock += action.quantity
-                        console.log("Before adding product: ", product.inStock)
-                        // return product
                     }
                     return product
                 }))
-            
-        // case ADD_CANDY:
-        //     found = false;
-        //     state.map((candy) => {
-        //         if (candy.text === action.text){
-        //             candy.quantity += action.num
-        //             found = true;
-        //         }
-        //     })
-
-        //     if (found == false) {
-        //         return([
-        //             {
-        //                 text: action.text,
-        //                 quantity: action.num,
-        //                 price: action.price,
-        //                 id: ++candyId
-        //             },        
-        //             ...state]
-        //             )
-        //     }
-        //     return [...state];
-
-        // case REMOVE_CANDY:
-        //     tempArr = state.filter(function (candy) {
-        //         return candy.id != action.id
-        //     })
-
-        //     return [...tempArr]
-        // case SHOW_CANDY:
-        //     return state
         default:
             console.log("return default")
             return data;
