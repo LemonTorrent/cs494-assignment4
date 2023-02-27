@@ -19,7 +19,7 @@ function candyReducer(state = [], action) {
                 return([
                     {
                         text: action.text,
-                        quantity: action.num,
+                        quantity: action.quantity,
                         price: action.price,
                         id: ++candyId
                     },        
