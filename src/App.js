@@ -16,8 +16,6 @@ function App() {
     const dispatch = useDispatch()
     const productContents = useSelector(getProducts)
 
-    console.log(products)
-    // console.log(getProducts())
     useEffect(() => {
         if (hasProductStore == false ) {
             setHasProductStore(true)
