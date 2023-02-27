@@ -5,8 +5,6 @@ let found = false;
 let tempArr = [];
 
 function candyReducer(state = [], action) {
-    // console.log("Reducer state:", state)
-    // console.log("Reducer action:", action)
     switch (action.type) {
         case ADD_CANDY:
             found = false;

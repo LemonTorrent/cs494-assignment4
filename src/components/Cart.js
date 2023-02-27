@@ -10,7 +10,6 @@ function Cart({ candies }) {
     const cartContents = useSelector(getCandies)
 
     function removeFromCart(id) {
-        console.log("Remove from cart at id ", id)
         dispatch(removeCandy(id));
     }
 
@@ -21,7 +20,6 @@ function Cart({ candies }) {
                     show ?
                         (
                             <div>
-                                {/* {candies ? candies.map(candy => <p>{candy.name}</p>) : <p>Nothing in Cart</p>} */}
                                 {console.log("Before mapping", cartContents.length)}
                                 {cartContents.length > 0 ? cartContents.map(candy => {
                                         return(<div>
@@ -32,7 +30,7 @@ function Cart({ candies }) {
                                         </div>
                                         )
                                     }) : <p>Nothing in Cart</p>}
-                                <button>Check Out</button>
+                                { cartContents.length > 0 ? <button>Check Out</button> : null }
                             </div>
                         ) : null
                 }

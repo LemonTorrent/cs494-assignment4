@@ -3,17 +3,20 @@ export const TOGGLE_CANDY = "TOGGLE_CANDY"
 export const REMOVE_CANDY = "REMOVE_CANDY"
 export const SHOW_CANDY = "SHOW_CANDY"
 
+export const ADD_PRODUCT = "ADD_PRODUCT"
+export const REMOVE_PRODUCT = "REMOVE_PRODUCT"
+
 /*
  * { type: ADD_TODO, text: "New todo text" }
  */
-export function addCandy(text, num = 0, price) {
+export function addCandy(text, quantity = 0, price) {
     // if (num >= 1) {
     //     return { type: ADD_CANDY, text, num }
         
     // }
 
     // return {};
-    return { type: ADD_CANDY, text, num, price}
+    return { type: ADD_CANDY, text, quantity, price}
 }
 
 /*
@@ -35,4 +38,17 @@ export function removeCandy(id) {
  */
 export function showCandy() {
     return { type: SHOW_CANDY }
+}
+
+/*
+ * { type: ADD_PRODUCT, text: "New candy text", int: price, int:  quantity}
+ */
+export function addProduct(text, quantity = 0, price) {
+    // if (num >= 1) {
+    //     return { type: ADD_CANDY, text, num }
+        
+    // }
+
+    // return {};
+    return { type: ADD_PRODUCT, text, quantity, price}
 }
