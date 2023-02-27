@@ -4,6 +4,7 @@ export const REMOVE_CANDY = "REMOVE_CANDY"
 export const SHOW_CANDY = "SHOW_CANDY"
 
 export const ADD_PRODUCT = "ADD_PRODUCT"
+export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT"
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT"
 
 /*
@@ -59,4 +60,11 @@ export function addProduct(name, inStock = 0, photoUrl, price, id) {
  */
 export function removeProduct(id, quantity) {
     return { type: REMOVE_PRODUCT, id, quantity }
+}
+
+/*
+ * { type: REMOVE_TODO, id: 3 }
+ */
+export function receiveProduct(name, quantity) {
+    return { type: RECEIVE_PRODUCT, name, quantity }
 }

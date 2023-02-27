@@ -38,7 +38,7 @@ function Candy({ name, inStock, id, photoUrl, price }) {
                 <div>
                     <input type="submit" onClick={() => {
                         console.log("quantity: ", products[id - 1])
-                        if (numCandy > 0 && numCandy < products[id - 1].inStock) {
+                        if (numCandy > 0 && numCandy <= products[id - 1].inStock) {
                             dispatch(addCandy(name, numCandy, price))
                             dispatch(removeProduct(id, numCandy))
                         }
@@ -49,6 +49,7 @@ function Candy({ name, inStock, id, photoUrl, price }) {
             Stock: {inStock}
             {/* <img src={photoUrl} alt={photoUrl} /> */}
             ${price}
+            Id: {id}
         </CandyContainer>
     )
 }

@@ -1,5 +1,5 @@
 import data from '../data/products.json'
-import { ADD_PRODUCT, REMOVE_PRODUCT } from './actions'
+import { ADD_PRODUCT, REMOVE_PRODUCT, RECEIVE_PRODUCT } from './actions'
 
 let productId = 0
 let found = false;
@@ -20,9 +20,6 @@ function productReducer(state = [], action) {
                 ...state
             ]
         case REMOVE_PRODUCT:
-            console.log("Removing product, action: ", action)
-            console.log("Tentative attempt ")
-            console.log("State: ", state)
             return (state.map((product) => {
                 if (product.id === action.id){
                     product.inStock -= action.quantity
@@ -30,6 +27,19 @@ function productReducer(state = [], action) {
                 }
                 return product
             }))
+            case RECEIVE_PRODUCT:
+                console.log("Restocking product, action: ", action)
+                console.log("Tentative attempt ")
+                console.log("State: ", state)
+                return (state.map((product) => {
+                    if (product.name === action.name){
+                        console.log("Before adding product: ", product.inStock)
+                        product.inStock += action.quantity
+                        console.log("Before adding product: ", product.inStock)
+                        // return product
+                    }
+                    return product
+                }))
             
         // case ADD_CANDY:
         //     found = false;
