@@ -2,6 +2,7 @@ export const ADD_CANDY = "ADD_CANDY"
 export const TOGGLE_CANDY = "TOGGLE_CANDY"
 export const REMOVE_CANDY = "REMOVE_CANDY"
 export const SHOW_CANDY = "SHOW_CANDY"
+export const CLEAR_CANDIES = "CLEAR_CANDIES"
 
 export const ADD_PRODUCT = "ADD_PRODUCT"
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT"
@@ -39,6 +40,11 @@ export function removeCandy(id) {
  */
 export function showCandy() {
     return { type: SHOW_CANDY }
+}
+
+export function clearCandies() {
+    console.log("Clearning candies:")
+    return { type: CLEAR_CANDIES }
 }
 
 /*

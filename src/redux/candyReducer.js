@@ -1,4 +1,4 @@
-import { ADD_CANDY, TOGGLE_CANDY, REMOVE_CANDY, SHOW_CANDY } from './actions'
+import { ADD_CANDY, TOGGLE_CANDY, REMOVE_CANDY, SHOW_CANDY, CLEAR_CANDIES } from './actions'
 
 let candyId = 0
 let found = false;
@@ -36,6 +36,8 @@ function candyReducer(state = [], action) {
             return [...tempArr]
         case SHOW_CANDY:
             return state
+        case CLEAR_CANDIES:
+            return []
         default:
             console.log("return default")
             return state

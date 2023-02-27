@@ -23,13 +23,13 @@ function productReducer(state = [], action) {
                 }
                 return product
             }))
-            case RECEIVE_PRODUCT:
-                return (state.map((product) => {
-                    if (product.name === action.name){
-                        product.inStock += action.quantity
-                    }
-                    return product
-                }))
+        case RECEIVE_PRODUCT:
+            return (state.map((product) => {
+                if (product.name === action.name){
+                    product.inStock += action.quantity
+                }
+                return product
+            }))
         default:
             console.log("return default")
             return data;
