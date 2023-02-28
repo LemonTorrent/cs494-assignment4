@@ -5,10 +5,33 @@ import {addCandy, removeProduct} from '../redux/actions'
 import { useState } from 'react'
 
 const CandyContainer = styled.div`
+    display: flex;
+    flex-direction: column;
     margin: 3px;
+    background: pink;
     button {
         margin-right: 5px;
     }
+    width: 300px;
+    img {
+        max-width: 250px;
+        max-height: 200px;
+    }
+
+    height: 400px;
+
+    
+`
+
+const CandyHeader = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #ffd9de;
+    h2 {
+        margin: 10px 0px;
+    }
+    margin: 10px 0;
 `
 
 function Candy({ name, inStock, id, photoUrl, price }) {
@@ -18,9 +41,12 @@ function Candy({ name, inStock, id, photoUrl, price }) {
 
     return (
         <CandyContainer >
+            <CandyHeader>
+                <h2>{name}</h2>
+            </CandyHeader>
+            <img src={photoUrl} alt={photoUrl}></img>
+
             <div>
-                <span class="validity"></span>
-                
                 <input 
                     value = {numCandy}
                     type="number" 
@@ -45,11 +71,9 @@ function Candy({ name, inStock, id, photoUrl, price }) {
                         }} value="Add to Cart"/>
                 </div>
             </div>
-            {name}
-            Stock: {inStock}
+            <p>Stock: {inStock}</p>
             {/* <img src={photoUrl} alt={photoUrl} /> */}
-            ${price}
-            Id: {id}
+            <p>${price}</p>
         </CandyContainer>
     )
 }

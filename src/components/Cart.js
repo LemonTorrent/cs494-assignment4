@@ -17,6 +17,10 @@ function Cart({ candies }) {
     return (
         <div>
             <div id="cart-contents">
+                <button onClick={()=>{
+                    console.log("cart contents:", cartContents)
+                    setShow(!show)
+                }}>{show ? "Hide" : "Show"} Cart ({cartContents.length})</button>
                 {
                     show ?
                         (
@@ -38,10 +42,7 @@ function Cart({ candies }) {
                 }
             </div>
             
-            <button onClick={()=>{
-                console.log("cart contents:", cartContents)
-                setShow(!show)
-            }}>{show ? "Hide" : "Show"} Cart ({cartContents.length})</button>
+            
         </div>
     )
 }
