@@ -17,11 +17,8 @@ const NavBarDiv = styled.div`
     background-color: black;
     display: flex;
     padding: 0;
-    // flex-direction: column;
-    // flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    // justify-content: flex-start;
     color: white;
 
     li {
@@ -52,8 +49,10 @@ const NavBarDiv = styled.div`
 const CandyStore = styled.div`
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 96%;
     justify-content: space-between;
+    padding: 15px;
+    margin: 0;
 `
 
 function App() {
