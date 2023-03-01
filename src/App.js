@@ -18,7 +18,7 @@ const NavBarDiv = styled.div`
     display: flex;
     padding: 0;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     color: white;
 
     li {
